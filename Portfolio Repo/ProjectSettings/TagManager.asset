@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
+  - Menus
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 243359285
+    locked: 0
+  - name: Furnature
+    uniqueID: 2721063679
+    locked: 0
+  - name: Interactable
+    uniqueID: 2931957519
+    locked: 0
+  - name: UI
+    uniqueID: 4021831139
+    locked: 0
+  - name: Player
+    uniqueID: 3448904331
+    locked: 0
+  - name: Display
+    uniqueID: 1174529171
     locked: 0
