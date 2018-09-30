@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: e3aa42b9312b91b4eaf5cd0175f881ee
-timeCreated: 1538284907
+timeCreated: 1538310381
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: BookMenu_0
+    21300002: BookMenu_1
+    21300004: BookMenu_2
+    21300006: BookMenu_3
+    21300008: BookMenu_4
+    21300010: BookMenu_5
+    21300012: BookMenu_6
+    21300014: BookMenu_7
+    21300016: BookMenu_8
+    21300018: BookMenu_9
+    21300020: BookMenu_10
+    21300022: BookMenu_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -86,9 +98,187 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BookMenu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3021
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_1
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 3021
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_2
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 3021
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2017
+        width: 1535
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 29, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_4
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 2017
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 18, y: 0, z: 15, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_5
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 2041
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 36, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1045
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_7
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 1045
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_8
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 1045
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_10
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 81
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BookMenu_11
+      rect:
+        serializedVersion: 2
+        x: 3064
+        y: 81
+        width: 1532
+        height: 975
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
