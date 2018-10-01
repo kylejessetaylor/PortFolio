@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interactable
   - Menus
+  - Button
+  - Hyperlink
   layers:
   - Default
   - TransparentFX

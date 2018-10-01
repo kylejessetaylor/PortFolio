@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e3aa42b9312b91b4eaf5cd0175f881ee
-timeCreated: 1538310381
+timeCreated: 1538395622
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -115,12 +115,12 @@ TextureImporter:
       name: BookMenu_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3021
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 28
+        y: 2940
+        width: 1447
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: BookMenu_1
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 3021
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1502
+        y: 2940
+        width: 1444
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: BookMenu_2
       rect:
         serializedVersion: 2
-        x: 3064
-        y: 3021
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2973
+        y: 2940
+        width: 1510
+        height: 1031
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,13 +157,13 @@ TextureImporter:
       name: BookMenu_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2017
-        width: 1535
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 29, w: 0}
+        x: 28
+        y: 1966
+        width: 1447
+        height: 965
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -171,13 +171,13 @@ TextureImporter:
       name: BookMenu_4
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 2017
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 18, y: 0, z: 15, w: 0}
+        x: 1502
+        y: 1966
+        width: 1444
+        height: 969
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -185,13 +185,13 @@ TextureImporter:
       name: BookMenu_5
       rect:
         serializedVersion: 2
-        x: 3064
-        y: 2041
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 36, y: 0, z: 0, w: 0}
+        x: 2973
+        y: 1966
+        width: 1445
+        height: 969
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -199,12 +199,12 @@ TextureImporter:
       name: BookMenu_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1045
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 28
+        y: 989
+        width: 1447
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: BookMenu_7
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 1045
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1502
+        y: 989
+        width: 1444
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +227,12 @@ TextureImporter:
       name: BookMenu_8
       rect:
         serializedVersion: 2
-        x: 3064
-        y: 1045
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2973
+        y: 989
+        width: 1445
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: BookMenu_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 81
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 28
+        y: 9
+        width: 1447
+        height: 969
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: BookMenu_10
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 81
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1502
+        y: 12
+        width: 1444
+        height: 966
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: BookMenu_11
       rect:
         serializedVersion: 2
-        x: 3064
-        y: 81
-        width: 1532
-        height: 975
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2970
+        y: 9
+        width: 1448
+        height: 969
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

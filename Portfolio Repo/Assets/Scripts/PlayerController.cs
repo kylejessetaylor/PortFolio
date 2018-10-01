@@ -24,10 +24,11 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        KeyControls();
         ApplyMovement();
     }
 
-    private void OnGUI()
+    private void KeyControls()
     {
         if (moveState == MoveState.Disabled)
         {
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 
             return;
         }
-        if (!Input.anyKey)
+        else if (!Input.anyKey)
         {
             //Stays Still
             moveState = MoveState.Idle;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetInteger("MovementState", 0);
         }
         //Up
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        else if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             //Moves up
             moveState = MoveState.Up;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetInteger("MovementState", 1);
         }
         //Down
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             //Moves down
             moveState = MoveState.Down;
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetInteger("MovementState", 2);
         }
         //Left
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             //Moves left
             moveState = MoveState.Left;
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetInteger("MovementState", 3);
         }
         //Right
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             //Moves right
             moveState = MoveState.Right;
@@ -77,7 +78,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         //If any key up & not interacting
-        if (!Input.anyKeyDown)
+        else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow) ||
+            Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow) ||
+            Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) ||
+            Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             //Up
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
