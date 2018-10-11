@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class Interactable : MonoBehaviour {
 
@@ -278,7 +279,12 @@ public class Interactable : MonoBehaviour {
 
     protected void GoToHyperlink()
     {
-        Application.OpenURL(urls[pageNumber - 1]);
+#if !UNITY_EDITOR
+		openWindow(urls[pageNumber - 1]);
+#endif
     }
+
+    [DllImport("__Internal")]
+    protected static extern void openWindow(string url);
 
 }

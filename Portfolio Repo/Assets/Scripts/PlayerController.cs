@@ -14,11 +14,24 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     public float slowAnim = 0.25f;
 
+    //Sound
+    [HideInInspector]
+    public AudioSource playerSound;
+    [Tooltip("Time it takes to complete a whole walk cycle.")]
+    public float animStep;
+    private float moveSoundCycle;
+    [HideInInspector]
+    public float timeSinceLastSound = 0f;
+    public AudioClip walkSound;
+    public AudioClip stuckSound;
+
 	// Use this for initialization
 	void Start () {
-
         anim = GetComponent<Animator>();
 
+        //Sound
+        playerSound = GetComponent<AudioSource>();
+        NewWalkSound(false);
 	}
 	
 	// Update is called once per frame
@@ -138,6 +151,8 @@ public class PlayerController : MonoBehaviour {
             {
                 SlowAnimation();
             }
+            //Sound
+            PlayMoveSound();
         }
         //Down
         else if (moveState == MoveState.Down)
@@ -154,6 +169,8 @@ public class PlayerController : MonoBehaviour {
             {
                 SlowAnimation();
             }
+            //Sound
+            PlayMoveSound();
         }
         //Left
         else if (moveState == MoveState.Left)
@@ -169,6 +186,8 @@ public class PlayerController : MonoBehaviour {
             {
                 SlowAnimation();
             }
+            //Sound
+            PlayMoveSound();
         }
         //Right
         else if (moveState == MoveState.Right)
@@ -184,16 +203,78 @@ public class PlayerController : MonoBehaviour {
             {
                 SlowAnimation();
             }
+            //Sound
+            PlayMoveSound();
         }
     }
 
     public void SlowAnimation()
     {
         anim.speed = slowAnim;
+
+        //Sound
+        NewWalkSound(true);
     }
 
     public void ResetAnimSpeed()
     {
         anim.speed = 1f;
+
+        //Sound
+        NewWalkSound(false);
+    }
+
+    private void PlayMoveSound()
+    {
+        timeSinceLastSound += Time.deltaTime;
+
+        if (timeSinceLastSound >= moveSoundCycle)
+        {
+            timeSinceLastSound -= moveSoundCycle;
+
+            playerSound.Play();
+        }
+    }
+
+    private void NewWalkSound(bool slowRepetition)
+    {
+        //Normal Movement
+        if (!slowRepetition)
+        {
+            AudioClip oldClip = playerSound.clip;
+            playerSound.clip = walkSound;
+
+            //Checks if sound changed from old
+            if (oldClip != playerSound.clip)
+            {
+                playerSound.Play();
+         
+                timeSinceLastSound = 0;
+            }
+
+            moveSoundCycle = animStep / 2;
+        }
+        //StuckonWall
+        else
+        {
+            AudioClip oldClip = playerSound.clip;
+            playerSound.clip = stuckSound;
+
+            //Checks if sound changed from old
+            if (oldClip != playerSound.clip)
+            {
+                playerSound.Play();
+
+                timeSinceLastSound = 0;
+
+                //Restarts current animation
+                AnimatorStateInfo currentAnim = anim.GetCurrentAnimatorStateInfo(0);
+                int currentAnimInt = currentAnim.fullPathHash;
+                anim.StopPlayback();
+                anim.Play(currentAnimInt, -1, 0f);
+            }
+
+            moveSoundCycle = (animStep / 2) / slowAnim;
+        }
     }
 }
