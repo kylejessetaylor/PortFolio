@@ -221,12 +221,12 @@ public class Interactable : MonoBehaviour {
     protected void KeyBindControls()
     {
         //Right Button
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             PageNumber(true);
         }
         //Left Button
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             PageNumber(false);
         }
@@ -246,7 +246,7 @@ public class Interactable : MonoBehaviour {
 
     protected void PageNumber(bool increase)
     {
-        if (!thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip"))
+        if (!thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip") && !thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip_Inverse"))
         {
             //Right
             if (increase)
