@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour {
     protected Animator menuAnim;
     protected Collider2D leftButton;
     protected Collider2D rightButton;
+    protected Collider2D exitButton;
 
     //Individual Menus (Children scripts)
     public GameObject thisMenu;
@@ -50,6 +51,7 @@ public class Interactable : MonoBehaviour {
         //Buttons
         leftButton = menu.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Collider2D>();
         rightButton = menu.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Collider2D>();
+        exitButton = menu.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<Collider2D>();
         //Hyperlinks
         for (int i = 0; i < thisMenu.transform.childCount; i++)
         {
@@ -129,14 +131,19 @@ public class Interactable : MonoBehaviour {
         thisMenuAnim.SetBool("PlayerDisabled", true);
         thisMenuAnim.SetInteger("PageNumber", 1);
         //Enables first hyperlink
+        ActivateLink(pageNumber);
+
+        //Child Script Activate
+        ActivateThisMenu();
+    }
+
+    private void ActivateLink(int currentPage)
+    {
         for (int i = 0; i < hyperlinkPages.Count; i++)
         {
             hyperlinkPages[i].gameObject.SetActive(false);
         }
-        hyperlinkPages[pageNumber - 1].gameObject.SetActive(true);
-
-        //Child Script Activate
-        ActivateThisMenu();
+        hyperlinkPages[currentPage - 1].gameObject.SetActive(true);
     }
 
     protected void HideMenu()
@@ -176,6 +183,7 @@ public class Interactable : MonoBehaviour {
             //Turns on buttons
             leftButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
 
             ClickControls();
 
@@ -186,17 +194,42 @@ public class Interactable : MonoBehaviour {
             //Turns off button images
             leftButton.gameObject.SetActive(false);
             rightButton.gameObject.SetActive(false);
+            exitButton.gameObject.SetActive(false);
         }
     }
 
     protected void ClickControls()
     {
+
+        //On Mouse Over
+        #region MouseOver
+
+        //Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+        ////Hyperlink Glow
+        //if (hit.collider.tag == "Hyperlink")
+        //{
+        //    hit.collider.GetComponent<SpriteRenderer>().color = highlightColor;
+        //}
+        #endregion
+
+        //On Mouse Press
+        #region MouseClick
+
         if (Input.GetMouseButtonDown(0))
         {
             Collider2D target = ClickedOnScreen();
             if (target == null)
             {
                 return;
+            }
+
+            //Exit Button
+            else if (target == exitButton)
+            {
+                player.moveState = PlayerController.MoveState.Idle;
+
+                HideMenu();
             }
 
             //Right Button
@@ -216,6 +249,7 @@ public class Interactable : MonoBehaviour {
                 GoToHyperlink();
             }
         }
+        #endregion
     }
 
     protected void KeyBindControls()
@@ -274,6 +308,7 @@ public class Interactable : MonoBehaviour {
             }
 
             //Changes Active Hyperlink
+            ActivateLink(pageNumber);
         }
     }
 
