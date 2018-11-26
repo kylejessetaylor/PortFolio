@@ -227,19 +227,6 @@ public class Interactable : MonoBehaviour {
 
     protected void ClickControls()
     {
-
-        //On Mouse Over
-        #region MouseOver
-
-        //Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-        ////Hyperlink Glow
-        //if (hit.collider.tag == "Hyperlink")
-        //{
-        //    hit.collider.GetComponent<SpriteRenderer>().color = highlightColor;
-        //}
-        #endregion
-
         //On Mouse Press
         #region MouseClick
 
@@ -311,7 +298,7 @@ public class Interactable : MonoBehaviour {
         {
             HideLink();
 
-            StartCoroutine(ExecuteAfterTime(0.1f, increase));
+            StartCoroutine(ExecuteAfterTime(0.15f, increase));
         }
     }
 
