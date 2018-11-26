@@ -291,6 +291,7 @@
     <Compile Include="Assets\Scripts\Background.cs" />
     <Compile Include="Assets\Scripts\Book.cs" />
     <Compile Include="Assets\Scripts\ColliderCheck.cs" />
+    <Compile Include="Assets\Scripts\GameConsole.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>

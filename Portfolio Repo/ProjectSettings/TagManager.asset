@@ -54,11 +54,11 @@ TagManager:
   - name: Interactable
     uniqueID: 2931957519
     locked: 0
-  - name: UI
-    uniqueID: 4021831139
-    locked: 0
   - name: Player
     uniqueID: 3448904331
+    locked: 0
+  - name: UI
+    uniqueID: 4021831139
     locked: 0
   - name: Display
     uniqueID: 1174529171

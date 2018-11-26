@@ -146,6 +146,14 @@ public class Interactable : MonoBehaviour {
         hyperlinkPages[currentPage - 1].gameObject.SetActive(true);
     }
 
+    private void HideLink()
+    {
+        for (int i = 0; i < hyperlinkPages.Count; i++)
+        {
+            hyperlinkPages[i].gameObject.SetActive(false);
+        }
+    }
+
     protected void HideMenu()
     {
         blackMenu.SetActive(false);
@@ -162,6 +170,9 @@ public class Interactable : MonoBehaviour {
             hyperlinkPages[i].gameObject.SetActive(false);
         }
 
+        //Hides buttons
+        ButtonsOn(false);
+
         //Child Script Activate
         HideThisMenu();
     }
@@ -176,25 +187,41 @@ public class Interactable : MonoBehaviour {
 
 //------------------------------------------------------------------------
 
+    protected void ButtonsOn(bool on)
+    {
+        if (on)
+        {
+            leftButton.gameObject.SetActive(true);
+            rightButton.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            leftButton.gameObject.SetActive(false);
+            rightButton.gameObject.SetActive(false);
+            exitButton.gameObject.SetActive(false);
+        }
+    }
+    
     protected void MenuInteractions()
     {
         if (menuVisible)
         {
-            //Turns on buttons
-            leftButton.gameObject.SetActive(true);
-            rightButton.gameObject.SetActive(true);
-            exitButton.gameObject.SetActive(true);
+            ButtonsOn(true);
 
             ClickControls();
 
             KeyBindControls();
-        }
-        else
-        {
-            //Turns off button images
-            leftButton.gameObject.SetActive(false);
-            rightButton.gameObject.SetActive(false);
-            exitButton.gameObject.SetActive(false);
+
+            //Hides Menu UI for Interactables during their transition
+            if (thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip") || thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip_Inverse"))
+            {
+                HideLink();
+            }
+            else
+            {
+                ActivateLink(pageNumber);
+            }
         }
     }
 
@@ -282,33 +309,44 @@ public class Interactable : MonoBehaviour {
     {
         if (!thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip") && !thisMenuAnim.GetCurrentAnimatorStateInfo(0).IsName("BookFlip_Inverse"))
         {
-            //Right
-            if (increase)
+            HideLink();
+
+            StartCoroutine(ExecuteAfterTime(0.1f, increase));
+        }
+    }
+
+    IEnumerator ExecuteAfterTime (float time, bool increase)
+    {
+        //suspend execution for X seconds
+        yield return new WaitForSeconds(time);
+        PageNumberChange(increase);
+    }
+
+    protected void PageNumberChange(bool increase)
+    {
+        //Right
+        if (increase)
+        {
+            pageNumber += 1;
+
+            if (pageNumber > maxPages)
             {
-                pageNumber += 1;
-
-                if (pageNumber > maxPages)
-                {
-                    pageNumber -= maxPages;
-                }
-                thisMenuAnim.speed = 1f;
-                thisMenuAnim.SetInteger("PageNumber", pageNumber);
+                pageNumber -= maxPages;
             }
-            //Left
-            else
+            thisMenuAnim.speed = 1f;
+            thisMenuAnim.SetInteger("PageNumber", pageNumber);
+        }
+        //Left
+        else
+        {
+            pageNumber -= 1;
+
+            if (pageNumber < 1)
             {
-                pageNumber -= 1;
-
-                if (pageNumber < 1)
-                {
-                    pageNumber += maxPages;
-                }
-                thisMenuAnim.speed = 1f;
-                thisMenuAnim.SetInteger("PageNumber", pageNumber);
+                pageNumber += maxPages;
             }
-
-            //Changes Active Hyperlink
-            ActivateLink(pageNumber);
+            thisMenuAnim.speed = 1f;
+            thisMenuAnim.SetInteger("PageNumber", pageNumber);
         }
     }
 
