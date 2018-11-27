@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     public float animStep;
     private float moveSoundCycle;
     [HideInInspector]
-    public float timeSinceLastSound = 0f;
+    public float timeSinceLastSound = 0.05f;
     public AudioClip walkSound;
     public AudioClip stuckSound;
 
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
         //Sound
         playerSound = GetComponent<AudioSource>();
         NewWalkSound(false);
+
 	}
 	
 	// Update is called once per frame
@@ -228,7 +229,7 @@ public class PlayerController : MonoBehaviour {
     {
         timeSinceLastSound += Time.deltaTime;
 
-        if (timeSinceLastSound >= moveSoundCycle)
+        if (timeSinceLastSound >= moveSoundCycle && moveState != MoveState.Disabled)
         {
             timeSinceLastSound -= moveSoundCycle;
 
@@ -245,7 +246,7 @@ public class PlayerController : MonoBehaviour {
             playerSound.clip = walkSound;
 
             //Checks if sound changed from old
-            if (oldClip != playerSound.clip)
+            if (oldClip != playerSound.clip && moveState != MoveState.Disabled)
             {
                 playerSound.Play();
          
@@ -261,7 +262,7 @@ public class PlayerController : MonoBehaviour {
             playerSound.clip = stuckSound;
 
             //Checks if sound changed from old
-            if (oldClip != playerSound.clip)
+            if (oldClip != playerSound.clip && moveState != MoveState.Disabled)
             {
                 playerSound.Play();
 

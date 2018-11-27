@@ -8,6 +8,8 @@ TagManager:
   - Menus
   - Button
   - Hyperlink
+  - Controls
+  - GameManager
   layers:
   - Default
   - TransparentFX

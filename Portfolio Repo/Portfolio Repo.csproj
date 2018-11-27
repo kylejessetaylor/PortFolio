@@ -292,7 +292,10 @@
     <Compile Include="Assets\Scripts\Book.cs" />
     <Compile Include="Assets\Scripts\ColliderCheck.cs" />
     <Compile Include="Assets\Scripts\GameConsole.cs" />
+    <Compile Include="Assets\Scripts\HideOnMove.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\Phone.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

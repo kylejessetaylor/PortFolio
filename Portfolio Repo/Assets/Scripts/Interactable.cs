@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-public class Interactable : MonoBehaviour {
+abstract public class Interactable : MonoBehaviour {
+
+    //Manager
+    protected Manager gameManager;
 
     //"E" Icon
     protected Animator anim;
@@ -34,6 +37,8 @@ public class Interactable : MonoBehaviour {
 
     protected void Awake()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Manager>();
+
         //"E" Icon & player
         anim = transform.GetChild(0).GetComponent<Animator>();
         playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -58,7 +63,12 @@ public class Interactable : MonoBehaviour {
             Collider2D link = thisMenu.transform.GetChild(i).gameObject.GetComponent<Collider2D>();
             hyperlinkPages.Add(link);
         }
+
+        //Start for child scripts
+        ChildStart();
     }
+
+    protected abstract void ChildStart();
 
 
     void OnTriggerEnter2D (Collider2D collision)
@@ -83,7 +93,7 @@ public class Interactable : MonoBehaviour {
     {
         Interacting();
 
-        //ChildUpdate();
+        ChildUpdate();
 
         MenuInteractions();
     }
@@ -107,10 +117,7 @@ public class Interactable : MonoBehaviour {
         }
     }
 
-    protected void ChildUpdate()
-    {
-
-    }
+    protected abstract void ChildUpdate();
 
     protected void ActivateMenu()
     {
@@ -177,31 +184,13 @@ public class Interactable : MonoBehaviour {
         HideThisMenu();
     }
 
-    protected void ActivateThisMenu()
-    {
-    }
+    protected abstract void ActivateThisMenu();
 
-    protected void HideThisMenu()
-    {
-    }
+    protected abstract void HideThisMenu();
 
-//------------------------------------------------------------------------
+    //------------------------------------------------------------------------
 
-    protected void ButtonsOn(bool on)
-    {
-        if (on)
-        {
-            leftButton.gameObject.SetActive(true);
-            rightButton.gameObject.SetActive(true);
-            exitButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            leftButton.gameObject.SetActive(false);
-            rightButton.gameObject.SetActive(false);
-            exitButton.gameObject.SetActive(false);
-        }
-    }
+    protected abstract void ButtonsOn(bool on);
     
     protected void MenuInteractions()
     {
