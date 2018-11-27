@@ -291,6 +291,7 @@
     <Compile Include="Assets\Scripts\Background.cs" />
     <Compile Include="Assets\Scripts\Book.cs" />
     <Compile Include="Assets\Scripts\ColliderCheck.cs" />
+    <Compile Include="Assets\Scripts\DoorTextBox.cs" />
     <Compile Include="Assets\Scripts\GameConsole.cs" />
     <Compile Include="Assets\Scripts\HideOnMove.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />

@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour {
             if (oldClip != playerSound.clip && moveState != MoveState.Disabled)
             {
                 playerSound.Play();
-         
+
                 timeSinceLastSound = 0;
             }
 
