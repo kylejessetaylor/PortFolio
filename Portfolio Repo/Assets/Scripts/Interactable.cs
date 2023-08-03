@@ -319,7 +319,7 @@ abstract public class Interactable : MonoBehaviour {
 
             if (pageNumber < 1)
             {
-                pageNumber += maxPages;
+                pageNumber = maxPages;
             }
             thisMenuAnim.speed = 1f;
             thisMenuAnim.SetInteger("PageNumber", pageNumber);
