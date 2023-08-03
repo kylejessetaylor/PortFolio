@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio Repo", "Portfolio Repo.csproj", "{B1D6B9BA-8C3B-D6BC-1F38-7F6CDCBAA3BE}"
 EndProject
 Global
