@@ -14,7 +14,8 @@ public class Phone : Interactable {
 
     protected override void ChildUpdate()
     {
-
+        //Only every 1 hyperlink
+        pageNumber = 1;
     }
 
     protected override void ActivateThisMenu()
